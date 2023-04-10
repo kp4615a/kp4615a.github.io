@@ -6,22 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Kate's Gallery</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h3> Kate's Gallery </h3>
-    <p> This the first draft of Kate's Gallery Website </p>
+    <h1> Portfolio </h1>
 
-    <ul>
+
+    <div class="portfolio-container">
       {% for file in site.static_files %}
-        
-          {% if file.path contains 'assets/portfolio' %}
-          <li>
-            <img src="{{ site.baseurl }}{{ file.path }}" alt="image" style="width: 20vw;" />
-          </li>
-          {% endif %}      
-        {% endfor %}
-    </ul>
+        {% if file.path contains 'assets/portfolio' %}
+          <img src="{{ site.baseurl }}{{ file.path }}" alt="image" style="width: 20vw;" />
+        {% endif %}      
+      {% endfor %}
+    </div>
   </body>
 </html>
