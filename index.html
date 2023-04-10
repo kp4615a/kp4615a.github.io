@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +10,18 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-	<h3> Kate's Gallery </h3>
-	<p> This the first draft of Kate's Gallery Website </p>
+    <h3> Kate's Gallery </h3>
+    <p> This the first draft of Kate's Gallery Website </p>
+
+    <ul>
+      {% for file in site.static_files %}
+        
+          {% if file.path contains 'assets/portfolio' %}
+          <li>
+            <img src="{{ site.baseurl }}{{ file.path }}" alt="image" style="width: 20vw;" />
+          </li>
+          {% endif %}      
+        {% endfor %}
+    </ul>
   </body>
 </html>
