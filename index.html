@@ -1,5 +1,13 @@
 ---
 ---
+
+<!-- TODO 
+1. make gallery responsive (e.g. 1 column)
+2. add pricing page
+3. add contact page
+4. navigation menu
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,13 +18,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    {% include navigation.html %}
     <h1> Portfolio </h1>
 
 
     <div class="portfolio-container">
       {% for file in site.static_files %}
         {% if file.path contains 'assets/portfolio' %}
-          <img src="{{ site.baseurl }}{{ file.path }}" alt="image" style="width: 20vw;" />
+          <img src="{{ site.baseurl }}{{ file.path }}" alt="image" />
         {% endif %}      
       {% endfor %}
     </div>
